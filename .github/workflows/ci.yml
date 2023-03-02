@@ -1,4 +1,4 @@
-name: CI
+name: Deploy To Github pages
 on:
   push:
     branches:
@@ -31,7 +31,7 @@ jobs:
           branch: gh-pages
           folder: ./docs/.vitepress/dist
   sync:
-    needs: sync-reload
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee
