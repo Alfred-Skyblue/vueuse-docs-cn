@@ -39,7 +39,7 @@ export default defineConfig({
     nav,
     sidebar,
     editLink: {
-      pattern: `${docGithubURL}/edit/master/docs/:path`,
+      pattern: `${docGithubURL}/edit/main/docs/:path`,
       text: '在 GitHub 上编辑此页',
     },
     socialLinks: [{ icon: 'github', link: githubURL }],
