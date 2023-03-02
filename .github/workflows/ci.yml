@@ -30,18 +30,4 @@ jobs:
         with:
           branch: gh-pages
           folder: ./docs/.vitepress/dist
-  sync-to-gitee:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sync Github Repos To Gitee
-        uses: Yikun/hub-mirror-action@v1.1
-        with:
-          src: github/Alfred-Skyblue
-          dst: gitee/alfred-skyblue
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token:  ${{ secrets.GITEE_TOKEN }}
-          account_type: user
-          clone_style: "https"
-          debug: true
-          force_update: true
+ 
