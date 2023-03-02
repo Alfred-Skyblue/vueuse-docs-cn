@@ -9,6 +9,8 @@
 
 <demo src="./demo.vue" title="onKeyStroke" desc=""></demo>
 
+请参阅[此表](https://developer.mozilla.org/zh-CN/docs/Web/API/UI_Events/Keyboard_event_key_values)了解所有键码。
+
 ### 监听多个键
 
 ```ts
