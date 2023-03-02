@@ -9,7 +9,7 @@ export default defineConfig({
   title: 'VueUse',
   description: 'VueUse 中文文档',
   lastUpdated: true,
-  base: './',
+  base: '/vueuse-docs-cn/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
   ],

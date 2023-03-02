@@ -11,4 +11,8 @@ export const nav = [
     text: '演练场',
     link: 'https://play.vueuse.org',
   },
+  {
+    text: '英文文档',
+    link: 'https://vueuse.org',
+  },
 ]
