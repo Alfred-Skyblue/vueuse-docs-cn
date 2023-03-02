@@ -14,5 +14,6 @@ export const nav = [
   {
     text: '英文文档',
     link: 'https://vueuse.org',
+    target: '_self',
   },
 ]

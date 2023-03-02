@@ -3,12 +3,12 @@ import glob from 'glob'
 import { sortBy } from 'lodash-es'
 
 const otherSidebarType = {
-  electron: 'Electron',
-  firebase: 'Firebase',
-  integrations: 'integrations',
-  math: '数学',
-  router: '路由',
-  rxjs: 'rxjs',
+  electron: '@Electron',
+  firebase: '@Firebase',
+  integrations: '@integrations',
+  math: '@数学',
+  router: '@路由',
+  rxjs: '@rxjs',
 }
 
 const allSidebarType = {
@@ -27,7 +27,7 @@ const allSidebarType = {
   ...otherSidebarType,
 }
 
-const ignoreDirectory = ['index', undefined]
+const globalIgnoreMDFiles = ['README']
 type Sidebar = SidebarGroup[]
 
 interface SidebarGroup {
@@ -72,9 +72,10 @@ const getChildren = function (
   ignoreMDFiles: Array<string> = [],
 ) {
   const pattern = '/**/*.md'
+
   const files = glob.sync(parentPath + pattern).reduce((acc, path) => {
     const newPath = path.slice(parentPath.length + 1, -3)
-    if (!ignoreMDFiles?.includes(newPath))
+    if (![...ignoreMDFiles, ...globalIgnoreMDFiles]?.includes(newPath.split(sep).pop()))
       acc.push({ path: newPath })
     return acc
   }, [])
@@ -87,7 +88,7 @@ const getChildren = function (
 
 function side(baseDir: string, options?: Options) {
   const parentPath = baseDir.replace('./docs', '')
-  const ignoreDir = [options?.ignoreDirectory ?? [], ignoreDirectory].flat()
+  const ignoreDir = options?.ignoreDirectory ?? []
   const mdFiles = getChildren(baseDir, options?.ignoreMDFiles)
   return mdFiles.reduce<Sidebar>((acc, current) => {
     const dirName = getDirName(current)
@@ -101,11 +102,11 @@ function side(baseDir: string, options?: Options) {
       text = link.split('/').filter(Boolean).pop()
     }
     const title = allSidebarType[dirName] ?? dirName
-
+    const groupAttrs = dirName in otherSidebarType ? { link: `/functions/${dirName}/README` } : {}
     if (sidebarItem)
       sidebarItem.items.push({ text, link })
     else
-      acc.push({ text: title, dirName, items: [{ text, link }], link: `/functions/${dirName}/README` })
+      acc.push({ text: title, dirName, items: [{ text, link }], ...groupAttrs })
 
     return acc
   }, [])
