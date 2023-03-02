@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, shallowReadonly } from 'vue'
-import { type ChangeCaseType, useChangeCase } from '@vueuse/integrations'
+import { type ChangeCaseType, useChangeCase } from '@vueuse/integrations/useChangeCase'
 const arr: Array<ChangeCaseType> = [
   'camelCase',
   'capitalCase',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCookies } from '@vueuse/integrations'
+import { useCookies } from '@vueuse/integrations/useCookies'
 
 const cookies = useCookies(['locale'])
 </script>

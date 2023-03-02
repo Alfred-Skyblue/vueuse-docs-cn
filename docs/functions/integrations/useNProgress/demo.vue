@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import './style.css'
-import { useNProgress } from '@vueuse/integrations'
+import { useNProgress } from '@vueuse/integrations/useNProgress'
 
 const { isLoading, progress } = useNProgress()
 </script>

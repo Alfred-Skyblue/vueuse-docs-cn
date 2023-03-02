@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useIDBKeyval } from '@vueuse/integrations'
+import { useIDBKeyval } from '@vueuse/integrations/useIDBKeyval'
 
 const KEY = 'vue-use-idb-keyval'
 
