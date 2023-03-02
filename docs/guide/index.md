@@ -1,4 +1,8 @@
-# 开始
+# 介绍
+
+该文档是 VueUse 的中文文档，如需查看官方文档，请访问 [vueuse](https://vueuse.org/) 。文档中涉及所有 `demo` 均来自于 `VueUse` 官方。项目中使用的 `css` 样式来自于 [`unocss`](https://github.com/unocss/unocss) 。
+
+## 开始
 
 `VueUse` 是一组基于 [Composition API](https://cn.vuejs.org/guide/extras/composition-api-faq.html) 的 `Hooks` 工具集，在查阅文档之前，我们假设您已经熟悉了[Composition API 的基本概念](https://cn.vuejs.org/guide/extras/composition-api-faq.html)。
 
@@ -16,7 +20,7 @@ npm i @vueuse/functions
 
 ### cdn
 
-```js
+```html
 <script src="https://unpkg.com/@vueuse/shared"></script>
 <script src="https://unpkg.com/@vueuse/core"></script>
 ```

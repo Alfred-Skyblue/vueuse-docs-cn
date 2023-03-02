@@ -2,9 +2,7 @@
 
 响应式 [drauu](https://github.com/antfu/drauu) 包装器，在 [@vueuse/integrations](https://vueuse.org/integrations/README) 附加组件中可用。
 
-## 演示
-
-<demo src="./demo.client.vue" title="useDrauu" desc=""></demo>
+演示请参考 [`useDrauu`](https://vueuse.org/integrations/useDrauu/)
 
 ## 安装
 

@@ -13,6 +13,9 @@ hero:
     - theme: brand
       text: 开始
       link: /guide/
+    - theme: brand
+      text: functions
+      link: /functions/state/createGlobalState/
 
 features:
   - icon: 🎛
