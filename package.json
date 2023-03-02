@@ -11,7 +11,6 @@
   "scripts": {
     "docs:dev": "vitepress dev docs --port 8023 --open",
     "docs:build": "vitepress build docs",
-    "deploy": "gh-pages -d docs/.vitepress/dist -t true",
     "eslint": "eslint . --fix"
   },
   "dependencies": {
@@ -46,7 +45,6 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.34.0",
     "eslint-plugin-markdown": "^3.0.0",
-    "gh-pages": "^5.0.0",
     "glob": "^8.1.0",
     "less": "^4.1.2",
     "markdown-it": "^13.0.1",
