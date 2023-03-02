@@ -31,10 +31,9 @@ export default defineConfig({
     lastUpdatedText: '上次更新',
     logo: '/favicon.svg',
     algolia: {
-      appId: '',
-      apiKey: '',
-      indexName: '',
-      placeholder: '搜索功能暂不可用',
+      appId: 'T26UD676CK',
+      apiKey: '7906a2b1c37d1026e24ac460b1d48ba3',
+      indexName: 'alfred-skyblue-gitee',
     },
     nav,
     sidebar,
