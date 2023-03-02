@@ -1,0 +1,44 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useBroadcastChannel } from '@vueuse/core'
+
+const { isSupported, data, post, error } = useBroadcastChannel({ name: 'vueuse-demo-channel' })
+
+const message = ref('')
+
+watch(data, () => {
+  if (data.value)
+    alert(data.value)
+})
+</script>
+
+<template>
+  <div>
+    <p>
+      支持:
+      <b>{{ isSupported }}</b>
+    </p>
+
+    <p>请至少在两个Tab中打开此页面</p>
+  </div>
+
+  <div v-if="isSupported">
+    <form @submit.prevent="post(message)">
+      <input v-model="message" type="text">
+      <button type="submit">
+        发送消息
+      </button>
+    </form>
+
+    <p v-if="data">
+      已收到: {{ data }}
+    </p>
+
+    <p v-if="error">
+      错误: {{ error }}
+    </p>
+  </div>
+  <div v-else>
+    您的浏览器不支持 BroadcastChannel API。
+  </div>
+</template>
