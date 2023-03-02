@@ -30,20 +30,3 @@ jobs:
         with:
           branch: gh-pages
           folder: ./docs/.vitepress/dist
-  sync:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
-        with:
-          source-repo: "git@github.com:Alfred-Skyblue/vueuse-docs-cn.git"
-          destination-repo: "git@gitee.com:alfred-skyblue/vueuse-docs-cn.git"
-      - name: reload
-        uses: mizuka-wu/gitee-pages-action@v1.0.0
-        with:
-          repository: alfred-skyblue/vueuse-docs-cn
-          cookie: ${{ secrets.GITEE_COOKIE }}
-          branch: gh_pages
