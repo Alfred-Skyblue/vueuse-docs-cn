@@ -1,8 +1,13 @@
 {
   "name": "vueuse-docs-cn",
   "version": "1.0.0",
+  "description": "vueuse 中文文档",
   "type": "module",
   "license": "MIT",
+  "author": {
+    "email": "yangpanteng@gmail.com",
+    "name": "丶远方"
+  },
   "scripts": {
     "docs:dev": "vitepress dev docs --port 8023 --open",
     "docs:build": "vitepress build docs",
