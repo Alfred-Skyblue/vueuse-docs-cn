@@ -7,7 +7,7 @@ const type = ref('vueuse')
 const favicon = computed(() => (type.value === 'vue' ? 'vue.png' : 'favicon-32x32.png'))
 
 useFavicon(favicon, {
-  baseUrl: '/',
+  baseUrl: '/vueuse-docs-cn/',
   rel: 'icon',
 })
 </script>
