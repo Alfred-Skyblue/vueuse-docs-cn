@@ -15,7 +15,7 @@
 ### npm
 
 ```bash
-npm i @vueuse/functions
+npm i @vueuse/core
 ```
 
 ### cdn
