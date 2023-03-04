@@ -1,6 +1,6 @@
 # 介绍
 
-该文档是 VueUse 的中文文档，如需查看官方文档，请访问 [vueuse](https://vueuse.org/) 。文档中涉及所有 `demo` 均来自于 `VueUse` 官方。项目中使用的 `css` 样式来自于 [`unocss`](https://github.com/unocss/unocss) 。
+该文档是由社区维护的 VueUse 中文文档，非官方文档，如需查看官方文档，请访问 [vueuse](https://vueuse.org/) 。文档中涉及所有 `demo` 均来自于 `VueUse` 官方。项目中使用的 `css` 样式来自于 [`unocss`](https://github.com/unocss/unocss) 。
 
 ## 开始
 
