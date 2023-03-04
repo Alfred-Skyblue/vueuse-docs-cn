@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,g as l}from"./app.82b098ca.js";const g=JSON.parse('{"title":"组件","description":"","frontmatter":{},"headers":[],"relativePath":"guide/components.md","lastUpdated":1677903597000}'),p={name:"guide/components.md"},o=l("",13),e=[o];function t(c,r,E,y,i,d){return n(),a("div",null,e)}const F=s(p,[["render",t]]);export{g as __pageData,F as default};
