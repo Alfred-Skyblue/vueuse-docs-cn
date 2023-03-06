@@ -12,6 +12,7 @@ export default defineConfig({
   base: '/vueuse-docs-cn/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vueuse-docs-cn/favicon.svg' }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-0hoO4Rl4KS' }],
   ],
 
   markdown: {
