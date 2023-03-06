@@ -9,7 +9,7 @@ export default defineConfig({
   title: 'VueUse',
   description: 'VueUse 中文文档',
   lastUpdated: true,
-  base: '/vueuse-docs-cn/',
+  base: '/',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vueuse-docs-cn/favicon.svg' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-0hoO4Rl4KS' }],
