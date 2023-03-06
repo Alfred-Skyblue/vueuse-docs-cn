@@ -13,8 +13,8 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vueuse-docs-cn/favicon.svg' }],
     ['meta', { name: 'baidu-site-verification', content: 'codeva-0hoO4Rl4KS' }],
+    ['meta', { name: 'google-site-verification', content: 'v3_UHXg-hHfXvTVPh5bhX6_AT-K2oX4AZ8LqbdCzLrM' }],
   ],
-
   markdown: {
     headers: {
       level: [0, 0],
