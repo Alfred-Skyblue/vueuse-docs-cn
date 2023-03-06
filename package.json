@@ -4,6 +4,13 @@
   "description": "vueuse 中文文档",
   "type": "module",
   "license": "MIT",
+  "keywords": [
+    "vueuse",
+    "vue3",
+    "composition-api",
+    "vue3.0",
+    "vueuse中文文档"
+  ],
   "author": {
     "email": "yangpanteng@gmail.com",
     "name": "丶远方"
