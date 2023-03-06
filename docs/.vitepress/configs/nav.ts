@@ -3,7 +3,7 @@ import { sidebar } from './sidebar'
 export const nav = [
   { text: '指导', link: '/guide/', activeMatch: '^/guide/' },
   {
-    text: 'Hooks',
+    text: 'functions',
     link: sidebar['/functions/'][0].items[0].link,
     activeMatch: '^/functions/',
   },

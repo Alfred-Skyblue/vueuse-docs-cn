@@ -14,7 +14,7 @@ hero:
       text: 开始
       link: /guide/
     - theme: brand
-      text: Hooks
+      text: Functions
       link: /functions/state/createGlobalState/
 
 features:
