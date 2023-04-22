@@ -17,6 +17,22 @@ const obj = reactive({
 const picked = reactiveOmit(obj, 'x', 'elementX') // { y: number, elementY: number }
 ```
 
+### 谓词用法
+
+```ts
+import { reactiveOmit } from '@vueuse/core'
+
+const obj = reactive({
+  bar: 'bar',
+  baz: 'should be omit',
+  foo: 'foo2',
+  qux: true,
+})
+
+const picked = reactiveOmit(obj, (key, value) => key === 'baz' || value === true)
+// { bar: string, foo: string }
+```
+
 ### 场景
 
 #### 选择性地将道具传递给子组件

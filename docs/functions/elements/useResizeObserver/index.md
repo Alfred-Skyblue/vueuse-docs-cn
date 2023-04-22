@@ -43,7 +43,7 @@ declare class ResizeObserver {
  * @param options
  */
 export declare function useResizeObserver(
-  target: MaybeComputedElementRef,
+  target: MaybeComputedElementRef | | MaybeComputedElementRef[],
   callback: ResizeObserverCallback,
   options?: UseResizeObserverOptions
 ): {

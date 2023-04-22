@@ -17,6 +17,24 @@ const obj = reactive({
 const picked = reactivePick(obj, 'x', 'elementX') // { x: number, elementX: number }
 ```
 
+
+### 谓词使用
+
+```ts
+import { reactivePick } from '@vueuse/core'
+
+const source = reactive({
+  foo: 'foo',
+  bar: 'bar',
+  baz: 'baz',
+  qux: true,
+})
+const state = reactivePick(source, (value, key) => key !== 'bar' && value !== true)
+// { foo: string, baz: string }
+source.qux = false
+// { foo: string, baz: string, qux: boolean }
+````
+
 ### 场景
 
 #### 选择性地将道具传递给子组件

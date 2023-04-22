@@ -12,7 +12,7 @@
 
 ```html
 <UseDark v-slot="{ isDark, toggleDark }">
-    <button @click="toggleDark()">Is Dark: {{ isDark }}</button>
+  <button @click="toggleDark()">Is Dark: {{ isDark }}</button>
 </UseDark>
 ```
 
@@ -27,12 +27,12 @@ useDark 结合 `usePreferredDarkanduseStorage` 启动时，它会从 `localStora
 ```html
 <!--light-->
 <html>
-    ...
+  ...
 </html>
 
 <!--dark-->
 <html class="dark">
-    ...
+  ...
 </html>
 ```
 
@@ -42,11 +42,11 @@ useDark 结合 `usePreferredDarkanduseStorage` 启动时，它会从 `localStora
 
 ```ts
 const isDark = useDark({
-  selector: 'body',
-  attribute: 'color-scheme',
-  valueDark: 'dark',
-  valueLight: 'light',
-})
+  selector: "body",
+  attribute: "color-scheme",
+  valueDark: "dark",
+  valueLight: "light",
+});
 ```
 
 会像
@@ -54,16 +54,16 @@ const isDark = useDark({
 ```html
 <!--light-->
 <html>
-    <body color-scheme="light">
-        ...
-    </body>
+  <body color-scheme="light">
+    ...
+  </body>
 </html>
 
 <!--dark-->
 <html>
-    <body color-scheme="dark">
-        ...
-    </body>
+  <body color-scheme="dark">
+    ...
+  </body>
 </html>
 ```
 
@@ -74,35 +74,42 @@ const isDark = useDark({
   onChanged(dark: boolean) {
     // update the dom, call the API or something
   },
-})
+});
 ```
 
 ## 类型
 
 ```ts
-export interface UseDarkOptions extends Omit<UseColorModeOptions<BasicColorSchema>, 'modes' | 'onChanged'> {
+export interface UseDarkOptions
+  extends Omit<UseColorModeOptions<BasicColorSchema>, "modes" | "onChanged"> {
   /**
-     * 当 isDark = true 时应用于目标元素的值
-     *
-     * @default 'dark'
-     */
-  valueDark?: string
+   * 当 isDark = true 时应用于目标元素的值
+   *
+   * @default 'dark'
+   */
+  valueDark?: string;
   /**
-     * 当 isDark = false 时应用于目标元素的值
-     *
-     * @default ''
-     */
-  valueLight?: string
+   * 当 isDark = false 时应用于目标元素的值
+   *
+   * @default ''
+   */
+  valueLight?: string;
   /**
-     * 用于处理更新的自定义函数，指定后，默认行为将被覆盖。
-     * @default undefined
-     */
-  onChanged?: (isDark: boolean) => void
+   * 用于处理更新的自定义函数，指定后，默认行为将被覆盖。
+   * @default undefined
+   */
+  onChanged?: (
+    isDark: boolean,
+    defaultHandler: (mode: BasicColorSchema) => void,
+    mode: BasicColorSchema
+  ) => void;
 }
 /**
  * 具有自动数据持久性的响应式暗模式。
  * @see https://vueuse.org/useDark
  * @param options
  */
-export declare function useDark(options?: UseDarkOptions): WritableComputedRef<boolean>
+export declare function useDark(
+  options?: UseDarkOptions
+): WritableComputedRef<boolean>;
 ```

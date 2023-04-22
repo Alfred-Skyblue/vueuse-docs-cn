@@ -6,7 +6,7 @@
 
 <demo src="./demo.vue" title="useAsyncValidator" desc=""></demo>
 
-## 安装 
+## 安装
 
 ```bash
 npm i async-validator
@@ -15,29 +15,38 @@ npm i async-validator
 ## 使用
 
 ```ts
-import { useAsyncValidator } from '@vueuse/integrations/useAsyncValidator'
+import { useAsyncValidator } from "@vueuse/integrations/useAsyncValidator";
 ```
-
 
 ## 类型
 
 ```ts
 export type AsyncValidatorError = Error & {
-  errors: ValidateError[]
-  fields: Record<string, ValidateError[]>
-}
+  errors: ValidateError[];
+  fields: Record<string, ValidateError[]>;
+};
 export interface UseAsyncValidatorReturn {
-  pass: Ref<boolean>
-  errorInfo: Ref<AsyncValidatorError | null>
-  isFinished: Ref<boolean>
-  errors: Ref<AsyncValidatorError['errors'] | undefined>
-  errorFields: Ref<AsyncValidatorError['fields'] | undefined>
+  pass: Ref<boolean>;
+  errorInfo: Ref<AsyncValidatorError | null>;
+  isFinished: Ref<boolean>;
+  errors: Ref<AsyncValidatorError["errors"] | undefined>;
+  errorFields: Ref<AsyncValidatorError["fields"] | undefined>;
 }
 export interface UseAsyncValidatorOptions {
   /**
    * @see https://github.com/yiminghe/async-validator#options
    */
-  validateOption?: ValidateOption
+  validateOption?: ValidateOption;
+  /**
+   * 验证将在第一次时立即触发。仅在 `manual` 未设置为 true 时有效。
+   *
+   * @default true
+   */
+  immediate?: boolean;
+  /**
+   * 如果设置为 true，将不会自动触发验证。
+   */
+  manual?: boolean;
 }
 /**
  * async-validator 包装器
@@ -49,5 +58,5 @@ export declare function useAsyncValidator(
   value: MaybeComputedRef<Record<string, any>>,
   rules: MaybeComputedRef<Rules>,
   options?: UseAsyncValidatorOptions
-): UseAsyncValidatorReturn & PromiseLike<UseAsyncValidatorReturn>
+): UseAsyncValidatorReturn & PromiseLike<UseAsyncValidatorReturn>;
 ```

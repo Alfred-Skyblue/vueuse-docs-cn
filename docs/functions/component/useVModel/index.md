@@ -5,33 +5,32 @@ v-model 绑定的简写，props + emit -> ref
 ## 用法
 
 ```ts
-import { useVModel } from '@vueuse/core'
+import { useVModel } from "@vueuse/core";
 
 export default {
   setup(props, { emit }) {
-    const data = useVModel(props, 'data', emit)
+    const data = useVModel(props, "data", emit);
 
-    console.log(data.value) // props.data
-    data.value = 'foo' // emit('update:data', 'foo')
+    console.log(data.value); // props.data
+    data.value = "foo"; // emit('update:data', 'foo')
   },
-}
+};
 ```
 
 ### `<script setup>`
 
 ```vue
 <script lang="ts" setup>
-import { useVModel } from '@vueuse/core'
+import { useVModel } from "@vueuse/core";
 
 const props = defineProps<{
-  modelValue: string
-}>()
-const emit = defineEmits(['update:modelValue'])
+  modelValue: string;
+}>();
+const emit = defineEmits(["update:modelValue"]);
 
-const data = useVModel(props, 'modelValue', emit)
+const data = useVModel(props, "modelValue", emit);
 </script>
 ```
-
 
 ## 类型
 
@@ -42,31 +41,39 @@ export interface UseVModelOptions<T> {
    *
    * @default false
    */
-  passive?: boolean
+  passive?: boolean;
   /**
    * 设置 eventName 后，它的值将用于覆盖发出的事件名称。
    *
    * @default undefined
    */
-  eventName?: string
+  eventName?: string;
   /**
    * 试图检查深层嵌套对象或数组中的属性更改。仅在 `passive` 选项设置为 `true` 时有效
    *
    * @default false
    */
-  deep?: boolean
+  deep?: boolean;
   /**
    * 当没有传递任何值时，为 return ref 定义默认值。
    *
    * @default undefined
    */
-  defaultValue?: T
+  defaultValue?: T;
   /**
    * 接受自定义克隆函数。当设置为 true 时，它将使用 JOSN.parse(JSON.stringify(value)) 进行克隆。
    *
    * @default false
    */
-  clone?: boolean | CloneFn<T>
+  clone?: boolean | CloneFn<T>;
+
+  /**
+   * 触发 emit 事件之前的钩子可用于表单验证。
+   * 如果返回 false，则不会触发 emit 事件。
+   *
+   * @default undefined
+   */
+  shouldEmit?: (v: T) => boolean;
 }
 /**
  * v-model 绑定的简写，props + emit -> ref
@@ -85,5 +92,5 @@ export declare function useVModel<
   key?: K,
   emit?: (name: Name, ...args: any[]) => void,
   options?: UseVModelOptions<P[K]>
-): Ref<UnwrapRef<P[K]>> | WritableComputedRef<P[K]>
+): Ref<UnwrapRef<P[K]>> | WritableComputedRef<P[K]>;
 ```

@@ -100,103 +100,101 @@ const { data, isFinished } = useAxios('/posts', { method: 'POST' }, instance, {
 ## 类型
 
 ```ts
-export interface UseAxiosReturn<T, R = AxiosResponse<T>, D = any> {
-  /**
-   * Axios 响应体
-   */
-  response: ShallowRef<R | undefined>
-  /**
-   * Axios 响应数据
-   */
-  data: Ref<T | undefined>
-  /**
-   * 表示请求是否已完成
-   */
-  isFinished: Ref<boolean>
-  /**
-   * 表示请求当前是否正在加载
-   */
-  isLoading: Ref<boolean>
-  /**
-   * 表示请求是否已取消
-   */
-  isAborted: Ref<boolean>
-  /**
-   * 可能发生的任何错误
-   */
-  error: ShallowRef<AxiosError<T, D> | undefined>
-  /**
-   * 中止当前请求
-   */
-  abort: (message?: string | undefined) => void
-  /**
-   * isFinished 别名
-   * @deprecated use `isFinished` instead
-   */
-  finished: Ref<boolean>
-  /**
-   * isLoading 别名
-   * @deprecated use `isLoading` instead
-   */
-  loading: Ref<boolean>
-  /**
-   * isAborted 别名
-   * @deprecated use `isAborted` instead
-   */
-  aborted: Ref<boolean>
-  /**
-   * abort 别名
-   */
-  cancel: (message?: string | undefined) => void
-  /**
-   * isAborted 别名
-   * @deprecated use `isCanceled` instead
-   */
-  canceled: Ref<boolean>
-  /**
-   * isAborted 别名
-   */
-  isCanceled: Ref<boolean>
+export interface UseAxiosReturn<T, R = AxiosResponse<T>, _D = any> {
+    /**
+     * Axios 返回的响应对象
+     */
+    response: ShallowRef<R | undefined>
+    /**
+     * Axios 返回的响应数据
+     */
+    data: Ref<T | undefined>
+    /**
+     * 表示请求是否已完成
+     */
+    isFinished: Ref<boolean>
+    /**
+     * 表示请求是否正在加载中
+     */
+    isLoading: Ref<boolean>
+    /**
+     * 表示请求是否已被取消
+     */
+    isAborted: Ref<boolean>
+    /**
+     * 表示发生的任何错误
+     */
+    error: ShallowRef<unknown | undefined>
+    /**
+     * 取消当前请求
+     */
+    abort: (message?: string | undefined) => void
+    /**
+     * `abort` 的别名
+     */
+    cancel: (message?: string | undefined) => void
+    /**
+     * `isAborted` 的别名
+     */
+    isCanceled: Ref<boolean>
 }
+
+// 严格模式下的 useAxios 函数返回类型
 export interface StrictUseAxiosReturn<T, R, D> extends UseAxiosReturn<T, R, D> {
-  /**
-   * 手动调用axios请求
-   */
-  execute: (
-    url?: string | RawAxiosRequestConfig<D>,
-    config?: RawAxiosRequestConfig<D>
-  ) => PromiseLike<StrictUseAxiosReturn<T, R, D>>
+    /**
+     * 手动调用 axios 请求
+     */
+    execute: (
+        url?: string | AxiosRequestConfig<D>,
+        config?: AxiosRequestConfig<D>
+    ) => Promise<StrictUseAxiosReturn<T, R, D>>
 }
+
+// 简单模式下的 useAxios 函数返回类型
 export interface EasyUseAxiosReturn<T, R, D> extends UseAxiosReturn<T, R, D> {
-  /**
-   * 手动调用axios请求
-   */
-  execute: (
-    url: string,
-    config?: RawAxiosRequestConfig<D>
-  ) => PromiseLike<EasyUseAxiosReturn<T, R, D>>
+    /**
+     * 手动调用 axios 请求
+     */
+    execute: (
+        url: string,
+        config?: AxiosRequestConfig<D>
+    ) => Promise<EasyUseAxiosReturn<T, R, D>>
 }
+
+// useAxios 函数的配置选项
 export interface UseAxiosOptions<T = any> {
-  /**
-   * 使用 useAxios 时会自动运行 axios 请求
-   *
-   */
-  immediate?: boolean
-  /**
-   * 使用 shallowRef.
-   *
-   * @default true
-   */
-  shallow?: boolean
-  /**
-   * 响应错误的回调函数
-   */
-  onError?: (e: unknown) => void
-  /**
-   * 响应成功的回调函数
-   */
-  onSuccess?: (data: T) => void
+    /**
+     * 当使用 `useAxios` 时是否自动运行 axios 请求
+     */
+    immediate?: boolean
+    /**
+     * 是否使用 shallowRef
+     *
+     * @default true
+     */
+    shallow?: boolean
+    /**
+     * 捕获错误时的回调函数
+     */
+    onError?: (e: unknown) => void
+    /**
+     * 捕获成功时的回调函数
+     */
+    onSuccess?: (data: T) => void
+    /**
+     * 初始数据
+     */
+    initialData?: T
+    /**
+     * 在执行 Promise 前将状态设置为 initialState
+     */
+    resetOnExecute?: boolean
+    /**
+     * 请求完成时的回调函数
+     */
+    onFinish?: () => void
 }
+
 export declare function useAxios<T = any, R = AxiosResponse<T>, D = any>(
   url: string,
   config?: RawAxiosRequestConfig<D>,
