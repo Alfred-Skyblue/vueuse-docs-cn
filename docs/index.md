@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🎛
     title: 功能丰富
-    details: 200+功能任你选择
+    details: 200+ 功能任你选择
   - icon: 💡
     title: 无缝迁移
     details: 适用于 Vue 3 和 Vue2
