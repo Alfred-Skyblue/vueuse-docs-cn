@@ -8,6 +8,10 @@ export const nav = [
     activeMatch: '^/functions/',
   },
   {
+    text: '联系我',
+    link: '/about/',
+  },
+  {
     text: '演练场',
     link: 'https://play.vueuse.org',
   },
