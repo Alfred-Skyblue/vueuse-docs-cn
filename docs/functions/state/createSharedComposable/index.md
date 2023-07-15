@@ -8,11 +8,12 @@
 
 ## 用法
 
--   useSharedMouse.ts
+- useSharedMouse.ts
 
-```vue
-import { createSharedComposable, useMouse } from '@vueuse/core' export const useSharedMouse =
-createSharedComposable(useMouse)
+```ts
+import { createSharedComposable, useMouse } from '@vueuse/core'
+
+export const useSharedMouse = createSharedComposable(useMouse)
 ```
 
 -   CompA.vue
