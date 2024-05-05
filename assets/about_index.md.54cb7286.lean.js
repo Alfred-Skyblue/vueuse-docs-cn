@@ -1,1 +1,0 @@
-import{_ as e,o as a,c as t,a as r}from"./app.a414ecd8.js";const n="/WeChat.png",m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"about/index.md","lastUpdated":1689409434000}'),s={name:"about/index.md"},o=r("",5),_=[o];function d(i,c,h,p,l,f){return a(),t("div",null,_)}const x=e(s,[["render",d]]);export{m as __pageData,x as default};
