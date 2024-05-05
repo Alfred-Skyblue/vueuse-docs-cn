@@ -17,8 +17,8 @@ export default defineConfig({
     [
       'meta',
       {
-        httpEquiv: 'refresh',
-        content: '0; url=https://vueuse.pages.dev/',
+        'http-equiv': 'refresh',
+        'content': '0; url=https://vueuse.pages.dev/',
       },
     ],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
