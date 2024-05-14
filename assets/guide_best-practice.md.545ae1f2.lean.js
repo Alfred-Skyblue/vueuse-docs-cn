@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as l}from"./app.8413c020.js";const F=JSON.parse('{"title":"最佳实践","description":"","frontmatter":{},"headers":[],"relativePath":"guide/best-practice.md","lastUpdated":1714916992000}'),p={name:"guide/best-practice.md"},o=l("",27),e=[o];function c(t,r,E,y,i,d){return n(),a("div",null,e)}const g=s(p,[["render",c]]);export{F as __pageData,g as default};
