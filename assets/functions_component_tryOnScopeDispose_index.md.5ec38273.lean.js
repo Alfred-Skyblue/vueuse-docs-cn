@@ -1,0 +1,11 @@
+import{_ as n,o as a,c as e,a as p}from"./app.a0e03023.js";const E=JSON.parse('{"title":"tryOnScopeDispose","description":"","frontmatter":{},"headers":[],"relativePath":"functions/component/tryOnScopeDispose/index.md","lastUpdated":1743581019000}'),o={name:"functions/component/tryOnScopeDispose/index.md"};function l(t,s,c,r,i,d){return a(),e("div",null,s[0]||(s[0]=[p(`<h1 id="tryonscopedispose" tabindex="-1">tryOnScopeDispose <a class="header-anchor" href="#tryonscopedispose" aria-hidden="true">#</a></h1><p>安全执行 <code>onScopeDispose</code>。如果它在效果范围生命周期内，则调用 <code>onScopeDispose()</code>，如果不在，则什么都不做</p><h2 id="用法" tabindex="-1">用法 <a class="header-anchor" href="#用法" aria-hidden="true">#</a></h2><div class="language-ts"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki github-dark vp-code-dark" tabindex="0"><code><span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { tryOnScopeDispose } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@vueuse/core&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0;">tryOnScopeDispose</span><span style="color:#E1E4E8;">(() </span><span style="color:#F97583;">=&gt;</span><span style="color:#E1E4E8;"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;">})</span></span>
+<span class="line"></span></code></pre><pre class="shiki github-light vp-code-light" tabindex="0"><code><span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { tryOnScopeDispose } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@vueuse/core&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;">tryOnScopeDispose</span><span style="color:#24292E;">(() </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;">})</span></span>
+<span class="line"></span></code></pre></div>`,4)]))}const h=n(o,[["render",l]]);export{E as __pageData,h as default};

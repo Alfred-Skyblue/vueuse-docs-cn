@@ -1,0 +1,11 @@
+import{_ as s,o as a,c as e,a as o}from"./app.a0e03023.js";const y=JSON.parse('{"title":"tryOnUnmounted","description":"","frontmatter":{},"headers":[],"relativePath":"functions/component/tryOnUnmounted/index.md","lastUpdated":1743581019000}'),t={name:"functions/component/tryOnUnmounted/index.md"};function p(l,n,c,r,d,i){return a(),e("div",null,n[0]||(n[0]=[o(`<h1 id="tryonunmounted" tabindex="-1">tryOnUnmounted <a class="header-anchor" href="#tryonunmounted" aria-hidden="true">#</a></h1><p>安全执行 <code>onUnmounted</code>。如果它在组件生命周期内，则调用 <code>onUnmounted()</code>，如果不在，则什么都不做</p><h2 id="用法" tabindex="-1">用法 <a class="header-anchor" href="#用法" aria-hidden="true">#</a></h2><div class="language-ts"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki github-dark vp-code-dark" tabindex="0"><code><span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { tryOnUnmounted } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@vueuse/core&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0;">tryOnUnmounted</span><span style="color:#E1E4E8;">(() </span><span style="color:#F97583;">=&gt;</span><span style="color:#E1E4E8;"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;">})</span></span>
+<span class="line"></span></code></pre><pre class="shiki github-light vp-code-light" tabindex="0"><code><span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { tryOnUnmounted } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@vueuse/core&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;">tryOnUnmounted</span><span style="color:#24292E;">(() </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;">})</span></span>
+<span class="line"></span></code></pre></div>`,4)]))}const m=s(t,[["render",p]]);export{y as __pageData,m as default};
