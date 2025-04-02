@@ -1,4 +1,4 @@
-注意：仓库已转移到 [cn-docs/vueuse](https://github.com/cn-docs/unocss)，如有错误请到 [cn-docs/vueuse](https://github.com/cn-docs/unocss) 提交 PR
+注意：仓库已转移到 [cn-docs/vueuse](https://github.com/cn-docs/vueuse)，如有错误请到 [cn-docs/vueuse](https://github.com/cn-docs/vueuse) 提交 PR
 
 # VueUse
 
